@@ -92,6 +92,7 @@ function authenticate(config: IConfig, done: (err: Error) => void) {
         var dims = regexps.exec($('script').text())
         for(var i = 1; i < 5; i++)
         {
+          console.info("debug: "+dims[i]);
           if ((dims[i] != undefined) && (dims[i] != "") && (dims[i] != "not-registered")) { isAuthenticated = true; }
           if ((dims[i] == "premium") || (dims[i] == "premiumplus")) { isPremium = true; }
         }
